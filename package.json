@@ -1,32 +1,52 @@
 {
-  "name": "automatization-challenge",
+  "name": "test-cafe-example",
   "version": "1.0.0",
-  "description": "Challenge",
+  "description": "Test Cafe automated browser tests",
   "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
-    "test": "mocha tests --reporter=mocha-multi-reporters"
+    "test": "testcafe \"chrome -incognito\" -e tests/",
+    "test:dev": "testcafe \"chrome -incognito\" -e --env dev",
+    "test:mobile": "testcafe \"chrome:emulation:device=iphone 6/7/8 -incognito\" -e --env dev",
+    "test:mobile:qa": "testcafe \"chrome:emulation:device=iphone 6/7/8 -incognito\" -e --env qa",
+    "test:mobile:staging": "testcafe \"chrome:emulation:device=iphone 6/7/8 -incognito\" -e --env staging",
+    "test:mobile:prod": "testcafe \"chrome:emulation:device=iphone 6/7/8 -incognito\" -e --env prod",
+    "test:qa": "testcafe \"chrome -incognito\" -e   --env qa",
+    "test:staging": "testcafe \"chrome -incognito\" -e --env staging",
+    "test:prod": "testcafe \"chrome -incognito\" -e --env prod",
+    "test:screenshot": "testcafe \"chrome -\" -e -S -s screenshots",
+    "test:bs": "cross-env BROWSERSTACK_USERNAME=elder.godoy@laureate.net npm run test:bs:2",
+    "test:bs:2": "cross-env BROWSERSTACK_ACCESS_KEY=hhWkbe4kuFSjpjTWSqsN testcafe 'browserstack:\"Samsung Galaxy S8\"' tests/*.js -e",
+    "test:ci": "testcafe \"chrome:headless,firefox:headless\" -e --env dev spec,xunit:report.xml",
+    "test:multiple": "testcafe \"chrome -incognito,firefox -private-window,ie,edge\" -e --env dev"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lestathn"
+    "url": "git@github.com:lestathn/ParkCalc-automatedTest.git"
   },
   "keywords": [
-    "selenium",
-    "javascript",
-    "mocha"
+    "automated",
+    "tests",
+    "testcafe",
+    "browser",
+    "testing",
+    "javascript"
   ],
-  "author": "Elder Godoy",
+  "author": "Elder Godoy <eldergodoy54@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "add-to-path": "^1.1.2",
-    "chai": "^4.1.2",
-    "dotenv": "^4.0.0",
-    "selenium-webdriver": "^3.5.0"
+    "args": "^5.0.0",
+    "dotenv": "^6.0.0",
+    "npm": "^6.14.3",
+    "testcafe-reporter-nunit": "^0.1.2",
+    "testcafe-reporter-xunit": "^2.1.0",
+    "xpath-to-css": "^1.0.2"
   },
   "devDependencies": {
-    "mocha": "^4.0.1",
-    "mocha-junit-reporter": "^1.15.0",
-    "mocha-multi-reporters": "^1.1.6",
-    "puppeteer": "^1.19.0"
+    "cross-env": "^5.2.0",
+    "testcafe": "^0.20.4",
+    "testcafe-browser-provider-browserstack": "^1.12.0"
   }
 }

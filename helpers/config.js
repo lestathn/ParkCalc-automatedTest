@@ -3,7 +3,7 @@ require('dotenv').config();
 const args = require('args');
 
 const defaultTests = [
-  'tests/test1-valetParking.js',
+  'tests/test.1-valetParking.js',
  
 ];
 
@@ -28,7 +28,7 @@ else {
 }
 
 module.exports = {
-    URL: process.env['URL_ENVIROMENT_' + flags.env.toUpperCase()],
+    URL: process.env.URL,
     FILES_TO_TEST: filesToTest,
     BROWSERS: flags.browser
 };

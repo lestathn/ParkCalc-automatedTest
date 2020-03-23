@@ -7,20 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "testcafe \"chrome -incognito\" -e tests/",
-    "test:dev": "testcafe \"chrome -incognito\" -e --env dev",
-    "test:mobile": "testcafe \"chrome:emulation:device=iphone 6/7/8 -incognito\" -e --env dev",
-    "test:mobile:qa": "testcafe \"chrome:emulation:device=iphone 6/7/8 -incognito\" -e --env qa",
-    "test:mobile:staging": "testcafe \"chrome:emulation:device=iphone 6/7/8 -incognito\" -e --env staging",
-    "test:mobile:prod": "testcafe \"chrome:emulation:device=iphone 6/7/8 -incognito\" -e --env prod",
-    "test:qa": "testcafe \"chrome -incognito\" -e   --env qa",
-    "test:staging": "testcafe \"chrome -incognito\" -e --env staging",
-    "test:prod": "testcafe \"chrome -incognito\" -e --env prod",
-    "test:screenshot": "testcafe \"chrome -\" -e -S -s screenshots",
-    "test:bs": "cross-env BROWSERSTACK_USERNAME=elder.godoy@laureate.net npm run test:bs:2",
-    "test:bs:2": "cross-env BROWSERSTACK_ACCESS_KEY=hhWkbe4kuFSjpjTWSqsN testcafe 'browserstack:\"Samsung Galaxy S8\"' tests/*.js -e",
-    "test:ci": "testcafe \"chrome:headless,firefox:headless\" -e --env dev spec,xunit:report.xml",
-    "test:multiple": "testcafe \"chrome -incognito,firefox -private-window,ie,edge\" -e --env dev"
+    "test": "testcafe \"chrome -incognito\" -e tests/"    
   },
   "repository": {
     "type": "git",

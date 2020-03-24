@@ -4,7 +4,11 @@ const args = require('args');
 
 const defaultTests = [
   'tests/test.1-valetParking.js',
- 
+  'tests/test.2-shortTermParking.js',
+  'tests/test.3-economyParking.js',
+  'tests/test.4-longGarage.js',  
+  'tests/test.5-longSurface.js', 
+  
 ];
 
 args

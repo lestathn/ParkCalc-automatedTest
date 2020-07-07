@@ -26,7 +26,7 @@
   "dependencies": {
     "args": "^5.0.0",
     "dotenv": "^6.0.0",
-    "npm": "^6.14.3",
+    "npm": "^6.14.6",
     "testcafe-reporter-nunit": "^0.1.2",
     "testcafe-reporter-xunit": "^2.1.0",
     "xpath-to-css": "^1.0.2"

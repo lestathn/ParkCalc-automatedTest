@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
-    "testcafe": "^0.20.4",
+    "testcafe": "^2.2.0",
     "testcafe-browser-provider-browserstack": "^1.12.0"
   }
 }
